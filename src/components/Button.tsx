@@ -1,9 +1,8 @@
-//named export: Além de poder importar mais componentes em um só arquivo, ele não deixa esquecer o nome do import, ao contrário do export default.
+import { ButtonHTMLAttributes } from "react";
+import "../styles/button.scss";
 
-interface ButtonProps {
-  text?: string;
-}
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
 export function Button(props: ButtonProps) {
-  return <button>{props.text || "Default"}</button>;
+  return <button className="button" {...props} />;
 }
